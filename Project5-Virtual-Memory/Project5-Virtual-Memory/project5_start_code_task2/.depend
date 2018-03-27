@@ -1,0 +1,28 @@
+barrier_test.o: barrier_test.c
+createimage.o: createimage.c
+interrupt.o: interrupt.c common.h kernel.h scheduler.h queue.h memory.h \
+  printf.h util.h interrupt.h cp0regdefs.h
+kernel.o: kernel.c common.h interrupt.h kernel.h scheduler.h queue.h \
+  printf.h printk.h util.h tasks.c th.h memory.h
+memory.o: memory.c common.h interrupt.h kernel.h scheduler.h queue.h \
+  memory.h printf.h util.h
+philosophers.o: philosophers.c
+print.o: print.c print.h
+printf.o: printf.c printf.h
+printk.o: printk.c printf.h print.h
+process1.o: process1.c common.h syslib.h util.h printf.h
+process2.o: process2.c common.h syslib.h util.h printf.h
+queue.o: queue.c common.h queue.h
+scheduler.o: scheduler.c common.h interrupt.h queue.h printf.h \
+  scheduler.h util.h syslib.h
+sync.o: sync.c common.h interrupt.h queue.h scheduler.h sync.h util.h \
+  printf.h
+syslib.o: syslib.c common.h syslib.h util.h
+tasks.o: tasks.c scheduler.h common.h queue.h th.h
+th1.o: th1.c common.h kernel.h scheduler.h queue.h th.h util.h printf.h
+th2.o: th2.c
+util.o: util.c util.h common.h
+bootblock.o: bootblock.S
+entry.o: entry.S asm.h regs.h cp0regdefs.h
+helper.o: helper.S
+syscall.o: syscall.S asm.h regs.h cp0regdefs.h
